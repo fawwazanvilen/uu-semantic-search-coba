@@ -1,5 +1,5 @@
 streamlit
-openai>=0.25.0
+openai==0.25.0
 matplotlib
 scikit-learn
 plotly
