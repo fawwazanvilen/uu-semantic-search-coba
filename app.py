@@ -39,7 +39,7 @@ def semanticsearch(query):
         id.append(result.id)
         about.append(result.metadata['about'])
         name.append(result.metadata['name'])
-        page.append(int(result.metadata['page'])+1)
+        page.append(int(result.metadata['page']))
         score.append(result.score)
 
     df = pd.DataFrame(np.column_stack([id, about, name, page, score]),
@@ -60,13 +60,22 @@ st.title("Selamat Datang di PENESEMUNDIA")
 st.header("Penelusuran Semantik Undang-Undang Indonesia")
 st.header("Hadirin Sekalian!! ⚖️ :memo:")
 
+# if "cari" not in st.session_state:
+#     st.session_state.cari = False
+
+# def prompt_callback():
+#     st.session_state.cari = True
+
 #Input
 st.subheader('Apa yang ingin anda cari?')
+# prompt = st.text_input('Masukan prompt di sini', on_change=prompt_callback)
 prompt = st.text_input('Masukan prompt di sini')
 
-#Doing cosine
+# st.session_state.cari = st.button("Cari!")
 
+#Doing cosine
 if st.button("Cari!"):
+# if st.session_state.cari:
     # search = search_reviews(data_merged_all, prompt, n=20)
     search = semanticsearch(prompt)
     
