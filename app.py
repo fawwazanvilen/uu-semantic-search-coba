@@ -6,12 +6,13 @@ import openai
 from openai.embeddings_utils import get_embedding, cosine_similarity
 import pinecone
 
-# dir = 'data_merged_all_01.pickle' # change this to relevant source
-dir = 'data_merged_test_small.pickle' # test
+# useless pickles
+# # dir = 'data_merged_all_01.pickle' # change this to relevant source
+# dir = 'data_merged_test_small.pickle' # test
 
-with open(dir, 'rb') as file:
-    # Deserialize the DataFrame using pickle.load()
-    data_merged_all = pickle.load(file) # should be in pandas
+# with open(dir, 'rb') as file:
+#     # Deserialize the DataFrame using pickle.load()
+#     data_merged_all = pickle.load(file) # should be in pandas
 
 # embeddings
 # embedding model parameters
