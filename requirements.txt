@@ -3,5 +3,5 @@ openai==0.25.0
 matplotlib
 scikit-learn
 plotly
-pinecone
+pinecone-client
 numpy
