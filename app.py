@@ -39,7 +39,7 @@ def semanticsearch(query):
         id.append(result.id)
         about.append(result.metadata['about'])
         name.append(result.metadata['name'])
-        page.append(int(result.metadata['page']))
+        page.append(int(result.metadata['page'])+1)
         score.append(result.score)
 
     df = pd.DataFrame(np.column_stack([id, about, name, page, score]),
@@ -72,6 +72,6 @@ if st.button("Cari!"):
     
     Data = {'UU'      : search['name'].values[:20],   #change prompt to 20
             'Tentang' : search['about'].values[:20],     
-            'Halaman' : search['page'].values[:20]+1}
+            'Halaman' : search['page'].values[:20]}
         
     st.table(Data)
