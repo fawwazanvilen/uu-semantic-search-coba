@@ -74,7 +74,7 @@ prompt = st.text_input('Masukan prompt di sini')
 # st.session_state.cari = st.button("Cari!")
 
 #Doing cosine
-if st.button("Cari!"):
+if st.button("Cari!") or prompt!="":
 # if st.session_state.cari:
     # search = search_reviews(data_merged_all, prompt, n=20)
     search = semanticsearch(prompt)
