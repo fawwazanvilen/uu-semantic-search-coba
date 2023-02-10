@@ -4,8 +4,8 @@ import pandas as pd
 import openai
 from openai.embeddings_utils import get_embedding, cosine_similarity
 
-# dir = 'data_merged_all_01.pickle' #change this to relevant source
-dir = 'data_merged_test_small.pickle'
+# dir = 'data_merged_all_01.pickle' # change this to relevant source
+dir = 'data_merged_test_small.pickle' # test
 
 with open(dir, 'rb') as file:
     # Deserialize the DataFrame using pickle.load()
