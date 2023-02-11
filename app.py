@@ -23,7 +23,8 @@ openai.api_key = st.secrets["openai_api"]
 
 # pinecone stuffs
 pinecone.init(api_key=st.secrets["pinecone_api"], environment=st.secrets["pinecone_env"]) # define pinecone inits
-index = pinecone.Index(st.secrets["pinecone_index"])
+# index = pinecone.Index(st.secrets["pinecone_index"]) # st.secrets seems to have problems if repeatedly called
+index = pinecone.Index("uuvector")
 
 # semantic search function 
 def semanticsearch(query):
@@ -45,14 +46,6 @@ def semanticsearch(query):
     df = pd.DataFrame(np.column_stack([id, about, name, page, score]),
                       columns=['id', 'about', 'name', 'page', 'score'])
     return df
-
-# def search_reviews(df, description, n=20, pprint=True):
-#    embedding = get_embedding(description, engine='text-embedding-ada-002')
-#    df['similarities'] = df['embedding'].apply(lambda x: cosine_similarity(x, embedding))
-#    res = df.sort_values('similarities', ascending=False).head(n)
-#    return res
-
-
 
 #------------------------------------------------------------------------------------------
 #LAYOUT
